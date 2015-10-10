@@ -39,6 +39,12 @@
 		D4AA11321BBE296B0076FB77 /* YouLose.png in Resources */ = {isa = PBXBuildFile; fileRef = D4AA11181BBE296B0076FB77 /* YouLose.png */; settings = {ASSET_TAGS = (); }; };
 		D4AA11331BBE296B0076FB77 /* YouWin.png in Resources */ = {isa = PBXBuildFile; fileRef = D4AA11191BBE296B0076FB77 /* YouWin.png */; settings = {ASSET_TAGS = (); }; };
 		D4AA11341BBE296B0076FB77 /* sprites.atlas in Resources */ = {isa = PBXBuildFile; fileRef = D4AA111A1BBE296B0076FB77 /* sprites.atlas */; settings = {ASSET_TAGS = (); }; };
+		D4B23CBF1BC0F124008B8021 /* MyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4B23CBE1BC0F124008B8021 /* MyUtils.swift */; settings = {ASSET_TAGS = (); }; };
+		D4FBF3281BC513AC00118F02 /* backgroundMusic.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D4FBF3231BC513AC00118F02 /* backgroundMusic.mp3 */; settings = {ASSET_TAGS = (); }; };
+		D4FBF3291BC513AC00118F02 /* hitCat.wav in Resources */ = {isa = PBXBuildFile; fileRef = D4FBF3241BC513AC00118F02 /* hitCat.wav */; settings = {ASSET_TAGS = (); }; };
+		D4FBF32A1BC513AC00118F02 /* hitCatLady.wav in Resources */ = {isa = PBXBuildFile; fileRef = D4FBF3251BC513AC00118F02 /* hitCatLady.wav */; settings = {ASSET_TAGS = (); }; };
+		D4FBF32B1BC513AC00118F02 /* lose.wav in Resources */ = {isa = PBXBuildFile; fileRef = D4FBF3261BC513AC00118F02 /* lose.wav */; settings = {ASSET_TAGS = (); }; };
+		D4FBF32C1BC513AC00118F02 /* win.wav in Resources */ = {isa = PBXBuildFile; fileRef = D4FBF3271BC513AC00118F02 /* win.wav */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +82,12 @@
 		D4AA11181BBE296B0076FB77 /* YouLose.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YouLose.png; sourceTree = "<group>"; };
 		D4AA11191BBE296B0076FB77 /* YouWin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = YouWin.png; sourceTree = "<group>"; };
 		D4AA111A1BBE296B0076FB77 /* sprites.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = sprites.atlas; sourceTree = "<group>"; };
+		D4B23CBE1BC0F124008B8021 /* MyUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyUtils.swift; sourceTree = "<group>"; };
+		D4FBF3231BC513AC00118F02 /* backgroundMusic.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backgroundMusic.mp3; sourceTree = "<group>"; };
+		D4FBF3241BC513AC00118F02 /* hitCat.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hitCat.wav; sourceTree = "<group>"; };
+		D4FBF3251BC513AC00118F02 /* hitCatLady.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = hitCatLady.wav; sourceTree = "<group>"; };
+		D4FBF3261BC513AC00118F02 /* lose.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = lose.wav; sourceTree = "<group>"; };
+		D4FBF3271BC513AC00118F02 /* win.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = win.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +124,7 @@
 				D44E56071BBD2EF00086CB0D /* AppDelegate.swift */,
 				D44E560B1BBD2EF00086CB0D /* GameScene.swift */,
 				D44E560D1BBD2EF00086CB0D /* GameViewController.swift */,
+				D4B23CBE1BC0F124008B8021 /* MyUtils.swift */,
 				D44E560F1BBD2EF00086CB0D /* Main.storyboard */,
 				D44E56121BBD2EF00086CB0D /* Assets.xcassets */,
 				D44E56141BBD2EF00086CB0D /* LaunchScreen.storyboard */,
@@ -123,6 +136,7 @@
 		D4AA10FB1BBE296B0076FB77 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D4FBF3221BC513AC00118F02 /* Sounds */,
 				D4AA10FC1BBE296B0076FB77 /* Icons */,
 				D4AA11141BBE296B0076FB77 /* Images */,
 				D4AA111A1BBE296B0076FB77 /* sprites.atlas */,
@@ -193,6 +207,18 @@
 			path = Images;
 			sourceTree = "<group>";
 		};
+		D4FBF3221BC513AC00118F02 /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+				D4FBF3231BC513AC00118F02 /* backgroundMusic.mp3 */,
+				D4FBF3241BC513AC00118F02 /* hitCat.wav */,
+				D4FBF3251BC513AC00118F02 /* hitCatLady.wav */,
+				D4FBF3261BC513AC00118F02 /* lose.wav */,
+				D4FBF3271BC513AC00118F02 /* win.wav */,
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -258,14 +284,18 @@
 				D4AA11321BBE296B0076FB77 /* YouLose.png in Resources */,
 				D4AA11281BBE296B0076FB77 /* Icon1024.png in Resources */,
 				D4AA111D1BBE296B0076FB77 /* Icon29@3x.png in Resources */,
+				D4FBF3281BC513AC00118F02 /* backgroundMusic.mp3 in Resources */,
 				D4AA11271BBE296B0076FB77 /* iTunesArtwork@2x.png in Resources */,
 				D4AA11261BBE296B0076FB77 /* iTunesArtwork.png in Resources */,
 				D4AA111B1BBE296B0076FB77 /* Icon29.png in Resources */,
 				D4AA111E1BBE296B0076FB77 /* Icon40.png in Resources */,
 				D4AA11331BBE296B0076FB77 /* YouWin.png in Resources */,
 				D4AA11221BBE296B0076FB77 /* Icon60@2x.png in Resources */,
+				D4FBF32C1BC513AC00118F02 /* win.wav in Resources */,
 				D4AA111C1BBE296B0076FB77 /* Icon29@2x.png in Resources */,
 				D44E56131BBD2EF00086CB0D /* Assets.xcassets in Resources */,
+				D4FBF32A1BC513AC00118F02 /* hitCatLady.wav in Resources */,
+				D4FBF32B1BC513AC00118F02 /* lose.wav in Resources */,
 				D4AA11251BBE296B0076FB77 /* Icon76@2x.png in Resources */,
 				D44E56111BBD2EF00086CB0D /* Main.storyboard in Resources */,
 				D4AA111F1BBE296B0076FB77 /* Icon40@2x.png in Resources */,
@@ -278,6 +308,7 @@
 				D4AA11201BBE296B0076FB77 /* Icon40@3x.png in Resources */,
 				D4AA112C1BBE296B0076FB77 /* Icon32.png in Resources */,
 				D4AA112D1BBE296B0076FB77 /* Icon512.png in Resources */,
+				D4FBF3291BC513AC00118F02 /* hitCat.wav in Resources */,
 				D4AA112E1BBE296B0076FB77 /* Icon64.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -292,6 +323,7 @@
 				D44E560C1BBD2EF00086CB0D /* GameScene.swift in Sources */,
 				D44E560E1BBD2EF00086CB0D /* GameViewController.swift in Sources */,
 				D44E56081BBD2EF00086CB0D /* AppDelegate.swift in Sources */,
+				D4B23CBF1BC0F124008B8021 /* MyUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
