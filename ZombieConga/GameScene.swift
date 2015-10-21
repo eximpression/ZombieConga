@@ -13,6 +13,7 @@ class GameScene: SKScene {
     var lastUpdateTime: NSTimeInterval = 0
     var dt: NSTimeInterval = 0
     let zomebieMovePointsPerSec:CGFloat = 480
+    let catMovePointsPerSec: CGFloat = 480
     var velocity = CGPointZero
     let playableRect: CGRect
     var lastTouchLocation: CGPoint?
@@ -55,6 +56,7 @@ class GameScene: SKScene {
         
         background.zPosition = -1
         zombie.position = CGPoint(x: 400, y: 400)
+        zombie.zPosition = 100
         self.addChild(zombie)
         self.debugDrawPlayableArea()
         self.runAction(SKAction.repeatActionForever( SKAction.sequence([SKAction.runBlock(spawnEnemy),
@@ -90,7 +92,7 @@ class GameScene: SKScene {
                 stopZombieAnimation()
             }
         }
-
+        moveTrain()
 
     }
     
@@ -264,7 +266,8 @@ class GameScene: SKScene {
             }
         }
         for cat in hitCats{
-            zombieHitCat(cat)
+            //zombieHitCat(cat)
+            changCatToTrain(cat)
         }
         if self.zombieBlink == false {
             var hitEnemies: [SKSpriteNode] = []
@@ -280,4 +283,37 @@ class GameScene: SKScene {
             }
         }
     }
+    
+    func changCatToTrain(cat:SKSpriteNode){
+        cat.name = "train"
+        cat.removeAllActions()
+        cat.setScale(1.0)
+        cat.zRotation = 0
+        cat.runAction(SKAction.sequence([
+            SKAction.colorizeWithColor(SKColor.greenColor(), colorBlendFactor: 1.0, duration: 0.2),
+            //SKAction.colorizeWithColorBlendFactor(0.0, duration: 1.0)
+            ]))
+       
+    }
+    
+    func moveTrain() {
+        
+        var targetPosition = zombie.position
+        
+        enumerateChildNodesWithName("train") { node, stop in
+            if !node.hasActions() {
+                
+                let actionDuration = 0.1
+                let offset = targetPosition - node.position
+                let direction = offset.normalized()
+                let amountToMovePerSec = direction * self.catMovePointsPerSec
+                let amountToMove = amountToMovePerSec * CGFloat(actionDuration)
+                let moveAction = SKAction.moveByX(amountToMove.x, y: amountToMove.y, duration: actionDuration)
+                node.runAction(moveAction)
+            }
+            targetPosition = node.position
+            
+        }
+    }
+    
 }
